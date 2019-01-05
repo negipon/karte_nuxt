@@ -3,6 +3,10 @@ const pkg = require('./package')
 module.exports = {
   mode: 'spa',
 
+  router: {
+    middleware: 'authenticated'
+  },
+
   /*
   ** Headers of the page
   */
@@ -35,7 +39,9 @@ module.exports = {
   ** Plugins to load before mounting the App
   */
   plugins: [
-    '@/plugins/vuetify'
+    '@/plugins/vuetify',
+    '@/plugins/firebase',
+    '@/plugins/auth'
   ],
 
   /*
@@ -43,6 +49,7 @@ module.exports = {
   */
   modules: [
     // Doc: https://github.com/nuxt-community/axios-module#usage
+    '@nuxtjs/dotenv',
     '@nuxtjs/axios'
   ],
   /*

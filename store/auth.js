@@ -33,7 +33,7 @@ export const actions = {
           commit('setUser', ret.user)
         })
         .catch(error => {
-          // エラー処理
+          console.log(error)
         })
     } catch (error) {
       console.log('reject[error]:' + error)

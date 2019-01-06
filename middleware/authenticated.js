@@ -1,9 +1,9 @@
 export default function({ store, route, redirect }) {
   if (
-    !store.getters['auth/isAuthenticated'] &&
-    route.fullPath !== '/common/sign-in' &&
-    route.fullPath !== '/common/sign-up'
+    !store.getters['user/isLogin'] &&
+    route.fullPath !== '/auth' &&
+    route.fullPath !== '/logout'
   ) {
-    redirect('/common/sign-in')
+    redirect('/auth')
   }
 }
